@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserva de Aerolíneas</title>
+</head>
+<body>
+
+<h1><strong>Reserva tus Vuelos con las Mejores Aerolíneas</strong></h1>
+<form action="guardar_reserva.php" method="post">
+    <label for="nombre">Nombre:</label><br>
+    <input type="text" id="nombre" name="nombre" required><br><br>
+
+    <label for="apellido">Apellido:</label><br>
+    <input type="text" id="apellido" name="apellido" required><br><br>
+
+    <label for="email">Correo electrónico (Gmail o Hotmail):</label><br>
+    <input type="email" id="email" name="email" required pattern=".+@(gmail|hotmail)\.com"><br><br>
+
+    <label for="documento">DNI o Pasaporte:</label><br>
+    <input type="text" id="documento" name="documento" required><br><br>
+
+    <label for="telefono">Número de Teléfono:</label><br>
+    <input type="tel" id="telefono" name="telefono" required><br><br>
+
+    <label for="aeropuerto">Elegir lugar de salida:</label><br>
+    <select id="aeropuerto" name="aeropuerto" required>
+        <option value="Aeroparque Jorge Newbery(Bs As)">Aeroparque Jorge Newbery (Bs As)</option>
+        <option value="Aeropuerto Internacional el Plumerillo (Mendoza)">Aeropuerto Internacional el Plumerillo (Mendoza)</option>
+        <option value="Aeropuerto Internacional Ingeniero Ambrosio Taravella (Córdoba)">Aeropuerto Internacional Ingeniero Ambrosio Taravella (Córdoba)</option>
+        <option value="Aeropuerto Internacional Ministro Pistarini (Ezeiza)">Aeropuerto Internacional Ministro Pistarini (Ezeiza)</option>
+    </select><br><br>
+
+    <label for="destino">Destino:</label><br>
+    <select id="destino" name="destino" required>
+        <option value="Madrid">Madrid</option>
+        <option value="Miami">Miami</option>
+        <option value="Milan">Milan</option>
+        <option value="París">París</option>
+        <option value="São Paulo">São Paulo</option>
+        <option value="Sídney">Sídney</option>
+    </select><br><br>
+
+    <label for="aerolinea">Elegir Aerolínea:</label><br>
+    <select id="aerolinea" name="aerolinea" required>
+        <option value="Aerolineas Argentinas">Aerolíneas Argentinas</option>
+        <option value="American Airlines">American Airlines</option>
+        <option value="Flybondi">Flybondi</option>
+        <option value="Gol Linhas Aereas">Gol Linhas Aereas</option>
+        <option value="Iberia">Iberia</option>
+        <option value="LATAM">LATAM</option>
+    </select><br><br>       
+
+    <label for="tipo_vuelo">Tipo de vuelo:</label><br>
+    <select id="tipo_vuelo" name="tipo_vuelo" required>
+        <option value="" disabled selected>Seleccione un tipo de vuelo</option>
+        <option value="Economica">Económica</option>
+        <option value="Ejecutiva">Ejecutiva</option>
+        <option value="Primera Clase">Primera Clase</option>
+    </select><br><br>
+
+    <label for="horario">Horario de salida:</label><br>
+    <input type="radio" id="morning" name="horario" value="Mañana" checked required>
+    <label for="morning">Mañana</label><br>
+    <input type="radio" id="evening" name="horario" value="Noche" required>
+    <label for="evening">Noche</label><br><br>
+
+    <label for="pasajeros">Cantidad de pasajeros:</label><br>
+    <select id="pasajeros" name="pasajeros" required>
+        <option value="" disabled selected>Seleccione la cantidad de pasajeros</option>
+        <option value="1">1 pasajero</option>
+        <option value="2">2 pasajeros</option>
+        <option value="3">3 pasajeros</option>
+        <option value="4">4 pasajeros</option>
+    </select><br><br>
+
+    <label for="idaVuelta">Solo ida o ida y vuelta:</label><br>
+    <input type="radio" id="solo_ida" name="idaVuelta" value="solo_ida" checked required>
+    <label for="solo_ida">Solo ida</label><br>
+    <input type="radio" id="idaVuelta" name="idaVuelta" value="ida_vuelta" required>
+    <label for="ida_Vuelta">Ida y vuelta</label><br><br>
+
+    <label for="fecha_salida">Fecha de salida:</label><br>
+    <input type="date" id="fecha_salida" name="fecha_salida" required><br><br>
+
+    <label for="fecha_regreso">Fecha de regreso (solo si es ida y vuelta):</label><br>
+    <input type="date" id="fecha_regreso" name="fecha_regreso"><br><br>
+
+    <fieldset>
+        <legend>Preferencia Alimentaria</legend>
+        <input type="radio" id="normal" name="comida" value="General" checked required>
+        <label for="normal">General</label><br>
+        <input type="radio" id="vegetariano" name="comida" value="Vegetariano" required>
+        <label for="vegetariano">Vegetariano</label><br>
+        <input type="radio" id="vegano" name="comida" value="Vegano" required>
+        <label for="vegano">Vegano</label><br>
+        <input type="radio" id="sin_gluten" name="comida" value="Sin Gluten" required>
+        <label for="sin_gluten">Sin Gluten</label><br>
+        <input type="radio" id="diabeticos" name="comida" value="Para Diabéticos" required>
+        <label for="diabeticos">Para Diabéticos</label><br>
+        <input type="radio" id="ovolactovegetariano" name="comida" value="Ovolactovegetariano" required>
+        <label for="ovolactovegetariano">Ovolactovegetariano</label><br>
+    </fieldset><br>
+
+    <fieldset>
+        <legend>Tipo de tarjeta</legend>
+        <input type="radio" id="visa" name="tipo_tarjeta" value="Visa" checked required>
+        <label for="visa">Visa</label><br>
+        <input type="radio" id="mastercard" name="tipo_tarjeta" value="MasterCard" required>
+        <label for="mastercard">MasterCard</label><br>
+        <input type="radio" id="amex" name="tipo_tarjeta" value="American Express" required>
+        <label for="amex">American Express</label><br>
+    </fieldset><br>
+
+    <input type="submit" value="Calcular Precio">
+</form>
+
+<hr>
+
+<h2>Consulta tu Reserva</h2>
+<form action="consultar_reserva.php" method="post">
+    <label for="reserva">Número de Reserva:</label><br>
+    <input type="text" id="reserva" name="reserva" required><br><br>
+    
+    <input type="submit" value="Consultar Reserva">
+</form>
+
+</body>
+</html>
+
