@@ -1,0 +1,15 @@
+# Ignorar archivos de configuración sensibles
+config.php
+.env
+
+# Ignorar archivos temporales y caché
+*.log
+*.tmp
+
+# Ignorar bases de datos SQLite
+*.sqlite
+
+# Ignorar archivos del sistema (Windows y macOS)
+Thumbs.db
+.DS_Store
+
