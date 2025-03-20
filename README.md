@@ -1,5 +1,5 @@
 # Las Palmas - Sistema de Reservas de aereas
-Este es un sistema de reservas para areas *Las Palmas, desarrollado en **PHP* con integración a *MySQL*. Permite a los usuarios registrarse, realizar reservas y gestionar sus estadías de forma sencilla.  
+Este es un sistema de reservas para areas *Las Palmas, desarrollado en **PHP* con integración a *MySQL*. Permite a los usuarios registrarse, realizar reservas de forma sencilla.  
 
 ## 🚀 Características  
 
